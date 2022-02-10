@@ -1,34 +1,37 @@
 <?php
 
+//Importando a função para calcular a tabuada
+require_once('./modulos/tabuada.php');
+
 //Declaração das váriaveis
-$tabuda = (int) 0;
-$contador = (int) 0;
+$multiplicando = (int) 0;
+$maximoMultiplicador = (int) 0;
 $resultado = (string) null;
 
 
 if (isset($_POST['btnCalcular'])) {
-   $tabuada = $_POST['txtTabuada'];
-   $contador = $_POST['txtContador'];
+   $multiplicando = $_POST['txtTabuada'];
+   $maximoMultiplicador = $_POST['txtContador'];
 
    //validação dos campos nulos
-   if ($tabuada == "" || $contador == "") {
+   if ($multiplicando == "" || $maximoMultiplicador == "") {
       echo ('Por favor preencha todos os campos');
    } else {
       //validação para confirmar se é número
-      if (!is_numeric($tabuada) || !is_numeric($contador)) {
+      if (!is_numeric($multiplicando) || !is_numeric($maximoMultiplicador)) {
          echo ('Utilize dados válidos. Apenas números');
       } else {
          //Validação para impedir o zero
-         if ($tabuada == 0 || $contador == 0) {
+         if ($multiplicando == 0 || $maximoMultiplicador == 0) {
             echo ('Qualquer número multplicado por zero é zero.');
          } else {
-            for ($i = 0; $i <= $contador; $i++) {
-               $resultado .= $tabuada * $i . '<br>';
-            }
+            //chamando a função para calcular tabuada
+            $resultado = calcularTabuada($multiplicando, $maximoMultiplicador);
          }
       }
    }
 }
+
 
 
 
