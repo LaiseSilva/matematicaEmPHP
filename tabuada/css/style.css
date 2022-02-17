@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: calc(100% - 95px);
+}
+
+header {
+  background-image: url(../img/teste.png);
+  height: 100px;
+  background-blend-mode: darken;
+  background-color: #00000080;
+}
+
+header > h1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.uau {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #938e8e;
+  flex-direction: column;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+form > h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.receberDados {
+  display: flex;
+}
+
+.campos {
+  height: 50px;
+}
+
+.resultado-tabuada {
+  z-index: 1;
+  width: 40%;
+  height: 50%;
+  text-align: center;
+  background-color: #55743b;
+  border: 2px solid #000000;
+  font-size: 1.5rem;
+  overflow-y: scroll;
+}
+
+.botao {
+  text-align: center;
+  width: 250px;
+  height: 40px;
+}

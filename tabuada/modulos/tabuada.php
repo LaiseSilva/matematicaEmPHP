@@ -21,5 +21,3 @@ function calcularTabuada($multiplicando, $maximoMultiplicador)
 
     return $resultado;
 }
-
-?>
