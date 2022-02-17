@@ -1,4 +1,8 @@
 <?php
+//importando arquivos
+require_once('../modulos/calculos.php');
+require_once('../modulos/config.php');
+
 //Declaração de variáveis
 $nota1 = (float) 0;
 $nota2 = (float) 0;
@@ -18,14 +22,13 @@ if (isset($_POST["btncalc"])) {
 
     //Validação para tratar de caixa vazia
     if ($_POST['txtn1'] == "" || $_POST['txtn2'] == "" || $_POST['txtn3'] == "" || $_POST['txtn4'] == "") {
-        echo ('<p class="msgError">É obrigatório preencher todos os campos!</p>');
+        echo (ERRO_MSG_CAIXA_VAZIA);
     } else {
-
         //Validação de tratamento para valores inválidos
         if (!is_numeric($nota1) || !is_numeric($nota2) || !is_numeric($nota3) || !is_numeric($nota4)) {
-            echo ('<p class="msgError">Para realizar o cálculo, todos os dados devem ser números</p>');
+            echo (ERRO_MSG_CARACTER_INVALIDO_TEXTO);
         } else {
-            $media = ($nota1 + $nota2 + $nota3 + $nota4) / 4;
+            $media = calcularMedia($nota1, $nota2, $nota3, $nota4);
         }
     }
 }

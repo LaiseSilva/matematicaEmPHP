@@ -1,11 +1,15 @@
 <?php
+require_once('../modulos/config.php');
 
 //Declaração das váriaveis
 $numeroInicial = (int) 0;
 $numeroFinal = (int) 0;
 $numerosPares = (string) null;
 $numerosImpares = (string) null;
+$pares = (string)  null;
+$impares = (string) null;
 $contador = (int) 0;
+
 
 if (isset($_POST['btnCalcular'])) {
 
@@ -15,7 +19,7 @@ if (isset($_POST['btnCalcular'])) {
 
     //Validação de caixas vazias
     if ($numeroInicial == "" || $numeroFinal == "") {
-        echo ('Por favor selecione uma opção');
+        echo (ERRO_MSG_CAIXA_VAZIA);
     } else {
         //Validação para o número final não ser menor 
         if ($numeroFinal < $numeroInicial) {
@@ -28,8 +32,12 @@ if (isset($_POST['btnCalcular'])) {
                 //Separação de números pares e impares
                 if ($contador % 2 == 0) {
                     $numerosPares .= $contador . '<br>';
+                    //contagem para saber a quantidadade de pares
+                    $pares++;
                 } else {
                     $numerosImpares .= $contador . '<br>';
+                    //contagem para saber a quantidade de impares
+                    $impares++;
                 }
             }
         }
@@ -49,15 +57,15 @@ if (isset($_POST['btnCalcular'])) {
 </head>
 
 <body>
-    <form name="par-e-impar" action="index.php" method="post">
+    <form name="par-e-impar" action="parImpar.php" method="post">
         Nº inicial:<select name="inicio" id="">
             <option value="">Por favor selecione um número</option>
             <?php
-            for ($i = 0; $i <= 500; $i++) {
-                echo "<option value = '$i' name = '$i'> $i </option>";
+            for ($i = 100; $i <= 1000; $i++) {
+
+                echo "<option value = '$i'> $i </option>";
             }
             ?>
-
         </select>
 
         Nº Final:<select id="" name="fim">
@@ -80,6 +88,16 @@ if (isset($_POST['btnCalcular'])) {
     <div>
         <h2>Nº impares:</h2>
         <?php echo ($numerosImpares); ?>
+    </div>
+
+    <div>
+        <h3>Qunatidade de pares:</h3>
+        <?php echo ($pares); ?>
+    </div>
+
+    <div>
+        <h3>Qunatidade de impares:</h3>
+        <?php echo ($impares); ?>
     </div>
 
 </body>

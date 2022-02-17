@@ -16,4 +16,17 @@ const ERRO_MSG_CARACTER_INVALIDO_TEXTO = '<script> alert("Não é possível real
 
 const ERRO_MSG_DIVISAO_ZERO ='<script> alert("Não é possível realizar divisão, onde o valor 2 é igual a 0!"); </script>';
 
+
+function criarOptionSelect($valorIncial, $valorFinal){
+
+    $teste = (string) null;
+
+    for($i = $valorIncial; $i <= $valorFinal; $i++){
+        $teste =  "<option value = '$i'> $i </option>";
+    }
+
+    return $teste;
+}
+
+
 ?>

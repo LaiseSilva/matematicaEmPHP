@@ -1,9 +1,11 @@
 <?php
 //importe de configurações de váriaveis e constantes
-require_once('modulo/config.php');
+require_once('../modulos/config.php');
+
+require_once('../modulos/validacao.php');
 
 //importe do arquivo funções para cáulos matemáticos
-require_once('modulo/calculos.php');
+require_once('../modulos/calculos.php');
 
 //Declaração de variáveis
 $valor1 = (float) 0;
@@ -16,10 +18,12 @@ if (isset($_POST['btncalc'])) {
 	//Recebe os dados do formulário
 	$valor1 = $_POST['txtn1'];
 	$valor2 = $_POST['txtn2'];
+	$valor3 = $_POST['rdocalc'];
 
 	//Validação de tratamento de erro para caixa vazia
-	if ($_POST['txtn1'] == "" || $_POST['txtn2'] == "")
+	if (validarCamposVazios($_POST['txtn1'],$_POST['txtn2']))
 		echo (ERRO_MSG_CAIXA_VAZIA);
+		
 	else {
 		//Validação de tratamento de erro para rdo sem escolha
 		if (!isset($_POST['rdocalc']))
