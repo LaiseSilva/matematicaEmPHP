@@ -21,7 +21,7 @@ if (isset($_POST['btncalc'])) {
 	$valor3 = $_POST['rdocalc'];
 
 	//Validação de tratamento de erro para caixa vazia
-	if (validarCamposVazios($_POST['txtn1'], $_POST['txtn2']))
+	if ($valor2 == "" || $valor1 == "")
 		echo (ERRO_MSG_CAIXA_VAZIA);
 
 	else {
