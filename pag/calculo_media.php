@@ -39,12 +39,15 @@ if (isset($_POST["btncalc"])) {
 
 <head>
     <title>Média</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="../css/formularioMedia.css">
+    <link rel="stylesheet" href="../css/header.css">
     <meta charset="utf-8">
 </head>
 
 <body>
-
+    <header>
+        <h1>Calculando...</h1>
+    </header>
     <div id="conteudo">
         <header id="titulo">
             Calculo de Médias

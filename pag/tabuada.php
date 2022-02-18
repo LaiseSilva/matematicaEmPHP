@@ -41,7 +41,11 @@ if (isset($_POST['btnCalcular'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="./matematicaEmPHP/css/tabuada.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../css/tabuada.css">
+   <link rel="stylesheet" href="../css/header.css">
    <title>Tabuada</title>
 </head>
 
@@ -49,25 +53,24 @@ if (isset($_POST['btnCalcular'])) {
    <header>
       <h1>Calculando...</h1>
    </header>
-   <div class="uau">
+   <div class="container">
       <span class="titulo">
          <h2>Tabuada</h2>
       </span>
       <form name="tabuada" action="tabuada.php" method="post">
          <div class="multiplicando">
-            <h3>Multiplicando:</h3>
+            <h3 class="textos-secundarios">Multiplicando:</h3>
             <input type="text" name="txtTabuada" value="">
          </div>
          <div class="multiplicador">
-            <h3>Máximo multiplicador:</h3>
+            <h3 class="textos-secundarios">Máximo multiplicador:</h3>
             <input type="text" name="txtContador" value="" class="input">
          </div>
-         <input type="submit" name="btnCalcular" value="calcular" class="botao">
+
+         <div class="botao"><input type="submit" name="btnCalcular" value="calcular"></div>
       </form>
-
-
-      <div class="resultado-tabuada">
-         <?php echo ($resultado); ?>
+      <div class="resultado">
+         <p><?php echo ($resultado); ?></p>
       </div>
    </div>
 

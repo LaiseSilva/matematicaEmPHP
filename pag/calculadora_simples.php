@@ -21,9 +21,9 @@ if (isset($_POST['btncalc'])) {
 	$valor3 = $_POST['rdocalc'];
 
 	//Validação de tratamento de erro para caixa vazia
-	if (validarCamposVazios($_POST['txtn1'],$_POST['txtn2']))
+	if (validarCamposVazios($_POST['txtn1'], $_POST['txtn2']))
 		echo (ERRO_MSG_CAIXA_VAZIA);
-		
+
 	else {
 		//Validação de tratamento de erro para rdo sem escolha
 		if (!isset($_POST['rdocalc']))
@@ -49,10 +49,14 @@ if (isset($_POST['btncalc'])) {
 
 <head>
 	<title>Calculadora - Simples</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="../css/calculadora.css">
+	<link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
+	<header>
+		<h1>Calculando...</h1>
+	</header>
 
 	<div id="conteudo">
 		<div id="titulo">
