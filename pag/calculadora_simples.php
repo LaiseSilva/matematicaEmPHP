@@ -2,8 +2,6 @@
 //importe de configurações de váriaveis e constantes
 require_once('../modulos/config.php');
 
-require_once('../modulos/validacao.php');
-
 //importe do arquivo funções para cáulos matemáticos
 require_once('../modulos/calculos.php');
 
@@ -50,12 +48,30 @@ if (isset($_POST['btncalc'])) {
 <head>
 	<title>Calculadora - Simples</title>
 	<link rel="stylesheet" href="../css/calculadora.css">
-	<link rel="stylesheet" href="../css/header.css">
+	<link rel="stylesheet" href="../css/menu.css">
 </head>
 
 <body>
 	<header>
-		<h1>Calculando...</h1>
+		<nav class="menu">
+			<ul class="sub">
+				<a href="../index.php">
+					<li>Home</li>
+				</a>
+				<a href="calculadora_simples.php">
+					<li>Calculadora Simples</li>
+				</a>
+				<a href="calculo_media.php">
+					<li>Cálculo da Média</li>
+				</a>
+				<a href="parImpar.php">
+					<li>Par ou Ímpar</li>
+				</a>
+				<a href="tabuada.php">
+					<li>Tabuada</li>
+				</a>
+			</ul>
+		</nav>
 	</header>
 
 	<div id="conteudo">

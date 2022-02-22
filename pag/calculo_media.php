@@ -40,13 +40,31 @@ if (isset($_POST["btncalc"])) {
 <head>
     <title>Média</title>
     <link rel="stylesheet" href="../css/formularioMedia.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/menu.css">
     <meta charset="utf-8">
 </head>
 
 <body>
     <header>
-        <h1>Calculando...</h1>
+        <nav class="menu">
+            <ul class="sub">
+                <a href="../index.php">
+                    <li>Home</li>
+                </a>
+                <a href="calculadora_simples.php">
+                    <li>Calculadora Simples</li>
+                </a>
+                <a href="calculo_media.php">
+                    <li>Cálculo da Média</li>
+                </a>
+                <a href="parImpar.php">
+                    <li>Par ou Ímpar</li>
+                </a>
+                <a href="tabuada.php">
+                    <li>Tabuada</li>
+                </a>
+            </ul>
+        </nav>
     </header>
     <div id="conteudo">
         <header id="titulo">
@@ -54,7 +72,7 @@ if (isset($_POST["btncalc"])) {
         </header>
 
         <div id="form">
-            <form name="frmMedia" method="post" action="index.php">
+            <form name="frmMedia" method="post" action="calculo_media.php">
                 <div>
                     <label>Nota 1:</label>
                     <input type="text" name="txtn1" value="<?php echo ($nota1) ?>">

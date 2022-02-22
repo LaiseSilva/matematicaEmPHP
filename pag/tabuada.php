@@ -24,7 +24,7 @@ if (isset($_POST['btnCalcular'])) {
       } else {
          //Validação para impedir o zero
          if ($multiplicando == 0 || $maximoMultiplicador == 0) {
-            echo ('Qualquer número multplicado por zero é zero.');
+            echo (ERRO_MSG_MULTPLICACAO_ZERO);
          } else {
             //chamando a função para calcular tabuada
             $resultado = calcularTabuada($multiplicando, $maximoMultiplicador);
@@ -45,13 +45,31 @@ if (isset($_POST['btnCalcular'])) {
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="../css/tabuada.css">
-   <link rel="stylesheet" href="../css/header.css">
+   <link rel="stylesheet" href="../css/menu.css">
    <title>Tabuada</title>
 </head>
 
 <body>
    <header>
-      <h1>Calculando...</h1>
+      <nav class="menu">
+         <ul class="sub">
+            <a href="../index.php">
+               <li>Home</li>
+            </a>
+            <a href="calculadora_simples.php">
+               <li>Calculadora Simples</li>
+            </a>
+            <a href="calculo_media.php">
+               <li>Cálculo da Média</li>
+            </a>
+            <a href="parImpar.php">
+               <li>Par ou Ímpar</li>
+            </a>
+            <a href="tabuada.php">
+               <li>Tabuada</li>
+            </a>
+         </ul>
+      </nav>
    </header>
    <div class="container">
       <span class="titulo">

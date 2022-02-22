@@ -13,7 +13,10 @@
 <body>
    <header>
       <nav class="menu">
-         <ul>
+         <ul class="sub">
+            <a href="./index.php">
+               <li>Home</li>
+            </a>
             <a href="pag/calculadora_simples.php">
                <li>Calculadora Simples</li>
             </a>
